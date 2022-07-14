@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Counter</title>
+</head>
+<body>
+  <div class="container mx-auto flex min-h-screen items-center justify-center">
+    <div class="bg-gray-700 relative h-96 w-10/12 md:w-1/2 flex justify-center rounded-lg shadow-2xl py-10 px-10">
+      <h1 class="text-center text-4xl font-bold absolute mt-10 top-0 text-white">Counter</h1>
+        <div class="grid grid-col-1 lg:grid-cols-2 gap-4 h-full relative mt-5">
+          <div class="flex items-center justify-center h-full font-bold text-9xl text-white" id="Template">0</div>
+
+        <div class="flex items-center">
+          <div class="flex-grow">
+            <input type="text w-full" class="border-2 px-9 py-3 focus:outline-none my-3 
+            placeholder-gray-500 rounded-xl placeholder-text-white" id="input"
+            placeholder="input your number">
+
+            <div class="grid grid-cols-5 divide-x-2 rounded-md border-2 font-bold ">
+              <button
+              onclick="increase()"
+              >+</button>
+              <button
+              onclick="decrease()">-</button>
+              <button
+              onclick="multiply()">x</button>
+              <button
+              onclick="div()">÷</button>
+              <button
+              onclick="zero()">C</button>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </div>
+  
+</body>
+<script>
+  let input = document.getElementById("input");
+  let template = document.getElementById("Template")
+
+
+  //increase function
+  const increase  = () =>{
+    let number = input.value;
+    template.innerHTML = parseFloat(template.innerHTML) + parseFloat(number)
+    //if you put number it won't work bcs the number variable will be the one that has empty string
+    //So that's why I use input.value = "" 
+    input.value = ""
+  }
+
+  //decrease function
+  const decrease  = () =>{
+    let number = input.value;
+    template.innerHTML = parseFloat(template.innerHTML) - parseFloat(number)
+    input.value = "" 
+    
+}
+
+const multiply  = () =>{
+    let number = input.value;
+    template.innerHTML = parseFloat(template.innerHTML) * parseFloat(number) 
+    input.value = "" 
+    
+}
+
+const div  = () =>{
+    let number = input.value;
+    template.innerHTML =  parseFloat(template.innerHTML)/parseFloat(number) 
+    input.value = "" 
+    
+}
+
+const zero  = () =>{
+    template.innerHTML="0" 
+}
+
+</script>
+</html>

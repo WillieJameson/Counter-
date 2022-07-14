@@ -1,0 +1,27 @@
+button{
+  padding: 0.75rem ;
+  color: white;
+
+}
+
+button:hover{
+  color: black;
+  animation-name: button;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes button {
+  0%{
+    background-color: rgba(245, 159, 11, 0.692);
+  }
+  100%{
+    background-color: rgb(245, 159, 11);
+  }
+}
+             
+
+body{
+  background-image: url(./beeecd71-f8db-4393-9a66-bbad06c47275.jpeg);
+  background-size: cover;
+}
